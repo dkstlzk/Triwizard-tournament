@@ -44,7 +44,7 @@ void initmaze(){
     // walls initialization in maze
     for (int y=0; y<HEIGHT; y++){
         for (int x=0; x<WIDTH; x++){
-            maze[y][x] = WALL;
+            maze[y][x]= WALL;
         }
     }
 }
@@ -52,10 +52,10 @@ void initmaze(){
 // generating maze using random algorithm 
 void genmaze(){
     initmaze();    // initialize maze with walls 
-    int visitedcells= 1;
+    int visitedcells=1;
     int totalcells= ((WIDTH-1)/2)*((HEIGHT-1)/2);    // total no of cells in maze
-    int x= 1+(2*(rand()%((WIDTH-1)/2)));     // start x-coordinate
-    int y= 1+(2*(rand()%((HEIGHT-1)/2)));      //start y-coordinate 
+    int x= 1+(2*(rand()%((WIDTH-1)/2)));     // start x-coord
+    int y= 1+(2*(rand()%((HEIGHT-1)/2)));      //start y-coord
     maze[y][x]= PATH;         
 
     while (visitedcells<totalcells){
@@ -149,7 +149,7 @@ void newgoalpos(){
 
 void updatewalls(){
     float timenow= GetTime();
-    if (timenow-lastwallmovetime >= wallmoveinterval){
+    if (timenow-lastwallmovetime>=wallmoveinterval){
         for (int y=1; y<HEIGHT-1; y++){
             for (int x=1; x<WIDTH-1; x++){
                 if ((x==player->x && y==player->y) || (x==goalX && y==goalY)) continue;          // skip if pos is occupied by player or goal
