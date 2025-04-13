@@ -188,7 +188,7 @@ bool collected_allkey(){         // to check allkeys collected or not
     return true;
 }
 
-int dragon_game(){
+int dragons_egg(){
     //Initwondow(SCREEN_WIDTH, SCREEN_HEIGHT, "Get the Golden Egg");
     SetTargetFPS(60);
     srand(time(NULL));                 // for generating random values
