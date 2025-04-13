@@ -75,7 +75,7 @@ int main(void){
 
             case GAME1:
                 lastgame=1;  // Set before transition
-                lastgamewon= dragon_game();
+                lastgamewon= dragons_egg();
                 game1won= lastgamewon;
                 currentscreen= TRANSITION;
                 break; 
@@ -89,7 +89,7 @@ int main(void){
             
             case GAME3:
                 lastgame=3;
-                lastgamewon= maze_game();
+                lastgamewon= enchanted_maze();
                 game3won= lastgamewon;
                 currentscreen=TRANSITION;
                 break;
