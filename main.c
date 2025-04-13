@@ -19,11 +19,11 @@ int main(void){
     InitWindow(screenwidth, screenheight, "THE TRIWIZARD TOURNAMENT");
 
     GameScreen currentscreen= MENU;
-    int lastGame=0;
-    bool lastGameWon= false;
-    bool game1Won= false;
-    bool game2Won= false;
-    bool game3Won= false;
+    int lastgame=0;
+    bool lastgamewon= false;
+    bool game1won= false;
+    bool game2won= false;
+    bool game3won= false;
 
     SetTargetFPS(60);
 
@@ -74,89 +74,89 @@ int main(void){
                 break;
 
             case GAME1:
-                lastGame=1;  // Set before transition
-                lastGameWon= dragon_game();
-                game1Won= lastGameWon;
+                lastgame=1;  // Set before transition
+                lastgamewon= dragon_game();
+                game1won= lastgamewon;
                 currentscreen= TRANSITION;
-                break;
+                break; 
             
             case GAME2:
-                lastGame=2;
-                lastGameWon= snitch_escape();
-                game2Won= lastGameWon;
+                lastgame=2;
+                lastgamewon= snitch_escape();
+                game2won= lastgamewon;
                 currentscreen= TRANSITION;
                 break;
             
             case GAME3:
-                lastGame=3;
-                lastGameWon= maze_game();
-                game3Won= lastGameWon;
+                lastgame=3;
+                lastgamewon= maze_game();
+                game3won= lastgamewon;
                 currentscreen=TRANSITION;
                 break;
             
             
 
             case TRANSITION:
-                if (lastGame==1){
+                if (lastgame==1){
                     DrawText("Dragon Task Complete!", 240, 180, 30, ORANGE);
-                    DrawText(lastGameWon ? "You got the egg!" : "You were caught by the dragon!", 200, 230, 25, lastGameWon ? GREEN : RED);
+                    DrawText(lastgamewon ? "You got the egg!" : "You were caught by the dragon!", 200, 230, 25, lastgamewon ? GREEN : RED);
                     DrawText("Press [ENTER] to continue...", 230, 300, 20, RAYWHITE);
-                } else if (lastGame == 2){
+                } else if (lastgame==2){
                     DrawText("Snitch Task Complete!", 240, 180, 30, ORANGE);
-                    DrawText(lastGameWon ? "You escaped with the Snitch!" : "The snitch outsmarted you!", 200, 230, 25, lastGameWon ? GREEN : RED);
+                    DrawText(lastgamewon ? "You escaped with the Snitch!" : "The snitch outsmarted you!", 200, 230, 25, lastgamewon ? GREEN : RED);
                     DrawText("Press [ENTER] to continue...", 230, 300, 20, RAYWHITE);
-                } else if (lastGame == 3){
+                } else if (lastgame==3){
                     DrawText("Maze Task Complete!", 240, 180, 30, ORANGE);
-                    DrawText(lastGameWon ? "You survived the maze!" : "The maze trapped you forever!", 220, 230, 25, lastGameWon ? GREEN : RED);
+                    DrawText(lastgamewon ? "You survived the maze!" : "The maze trapped you forever!", 220, 230, 25, lastgamewon ? GREEN : RED);
                     DrawText("Press [ENTER] to see your final result...", 180, 300, 20, RAYWHITE);
                 }
             
                 if (IsKeyPressed(KEY_ENTER)){
-                    if (lastGame==1) currentscreen = GAME2;
-                    else if (lastGame==2) currentscreen = GAME3;
-                    else if (lastGame == 3) currentscreen = END;
+                    if (lastgame==1) currentscreen= GAME2;
+                    else if (lastgame==2) currentscreen= GAME3;
+                    else if (lastgame==3) currentscreen= END;
                 }
                 break;
 
 
             case END:
-                if (game1Won && game2Won && game3Won) {
+                if (game1won && game2won && game3won){
                     DrawText("Congratulations, Champion!", 180, 200, 40, GREEN);
                     DrawText("You won the Triwizard Tournament Cup!", 160, 260, 20, RAYWHITE);
-                } else {
+                } else{
                     DrawText("The Tournament is Over.", 230, 200, 35, RED);
             
-                    int yOffset = 300;
-                    if (game1Won) {
-                        DrawText("1. Dragon Game: Won", 200, yOffset, 20, GREEN);
-                    } else {
-                        DrawText("1. Dragon Game: Lost", 200, yOffset, 20, RED);
+                    int Yoffset=300;
+                    if (game1won){
+                        DrawText("1. Dragon Game: Won", 200, Yoffset, 20, GREEN);
+                    } else{
+                        DrawText("1. Dragon Game: Lost", 200, Yoffset, 20, RED);
                     }
-                    yOffset += 30;
+                    Yoffset+=30;
             
-                    if (game2Won) {
-                        DrawText("2. Snitch Escape: Won", 200, yOffset, 20, GREEN);
-                    } else {
-                        DrawText("2. Snitch Escape: Lost", 200, yOffset, 20, RED);
+                    if (game2won){
+                        DrawText("2. Snitch Escape: Won", 200, Yoffset, 20, GREEN);
+                    } else{
+                        DrawText("2. Snitch Escape: Lost", 200, Yoffset, 20, RED);
                     }
-                    yOffset += 30;
+                    Yoffset+=30;
             
-                    if (game3Won) {
-                        DrawText("3. Enchanted Maze: Won", 200, yOffset, 20, GREEN);
-                    } else {
-                        DrawText("3. Enchanted Maze: Lost", 200, yOffset, 20, RED);
-                    }
-            
-                    if (game1Won && game2Won && game3Won) {
-                        DrawText("You have won the Triwizard Cup!", 160, yOffset + 60, 20, GREEN);
-                    } else {
-                        DrawText("Better luck next time!", 180, yOffset + 60, 20, GRAY);
+                    if (game3won){
+                        DrawText("3. Enchanted Maze: Won", 200, Yoffset, 20, GREEN);
+                    } else{
+                        DrawText("3. Enchanted Maze: Lost", 200, Yoffset, 20, RED);
                     }
             
-                    DrawText("Press [ENTER] to play again or [ESC] to exit.", 180, yOffset + 120, 20, RAYWHITE);
+                    if (game1won && game2won && game3won){
+                        DrawText("You have won the Triwizard Cup!", 160, Yoffset+60, 20, GREEN);
+                    } else{
+                        DrawText("Better luck next time!", 180, Yoffset+60, 20, GRAY);
+                    }
             
-                    if (IsKeyPressed(KEY_ENTER)) currentscreen = MENU;
-                    if (IsKeyPressed(KEY_ESCAPE)) currentscreen = EXIT;
+                    DrawText("Press [ENTER] to play again or [ESC] to exit.", 180, Yoffset+120, 20, RAYWHITE);
+            
+                    if (IsKeyPressed(KEY_ENTER)) currentscreen= MENU;
+                    if (IsKeyPressed(KEY_ESCAPE)) currentscreen= EXIT;
                 }
                 break;            
         }
