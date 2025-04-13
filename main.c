@@ -44,17 +44,17 @@ int main(void){
                 break;
         
             case HELP:
-                DrawText("🕹️ Game Controls", 280, 60, 30, SKYBLUE);
+                DrawText("Game Controls", 280, 60, 30, SKYBLUE);
             
-                DrawText("🐉 Dragon Game:", 100, 120, 20, ORANGE);
+                DrawText(" Dragon Game:", 100, 120, 20, ORANGE);
                 DrawText("Use Arrow Keys to move.", 120, 150, 18, RAYWHITE);
                 DrawText("Collect keys and reach the egg while avoiding the dragon.", 120, 170, 18, RAYWHITE);
             
-                DrawText("👻 Snitch Escape:", 100, 210, 20, ORANGE);
+                DrawText("Snitch Escape:", 100, 210, 20, ORANGE);
                 DrawText("Use Arrow Keys to move the Snitch.", 120, 240, 18, RAYWHITE);
                 DrawText("Avoid Death Eaters and collect all pellets.", 120, 260, 18, RAYWHITE);
             
-                DrawText("🌿 Enchanted Maze:", 100, 300, 20, ORANGE);
+                DrawText("Enchanted Maze:", 100, 300, 20, ORANGE);
                 DrawText("Use Arrow Keys to navigate.", 120, 330, 18, RAYWHITE);
                 DrawText("Reach the moving goal before time runs out.", 120, 350, 18, RAYWHITE);
                 DrawText("Walls change positions randomly!", 120, 370, 18, RAYWHITE);
