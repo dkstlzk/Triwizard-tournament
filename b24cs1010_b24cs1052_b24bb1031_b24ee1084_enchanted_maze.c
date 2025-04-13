@@ -229,9 +229,8 @@ void drawendscreen(){
 }
 
 
-int maze_game(){
+int enchanted_maze(){
     srand(time(NULL));
-    //InitWindow(WIDTH*CELLSIZE, HEIGHT*CELLSIZE, "Labyrinth Maze Game");
 
     // DMA for maze and player
     maze = (int **)malloc(HEIGHT*sizeof(int *));
