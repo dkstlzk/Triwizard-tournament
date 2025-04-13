@@ -26,10 +26,10 @@ float goalmoveinterval= 6.0;
 int goalX= WIDTH-2;    // initial goal position
 int goalY= HEIGHT-2;
 
-float gamestarttime = 0;
-float gameduration = 120.0;     // game duration in secs (2 mins)
-bool gameover = false;
-bool gamelost = false;
+float gamestarttime= 0;
+float gameduration= 120.0;     // game duration in secs (2 mins)
+bool gameover= false;
+bool gamelost= false;
 
 
 // dynamically allocated player
