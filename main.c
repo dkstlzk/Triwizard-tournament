@@ -126,34 +126,31 @@ int main(void){
                 } else{
                     DrawText("The Tournament is Over.", 230, 200, 35, RED);
             
-                    int Yoffset=300;
                     if (game1won){
-                        DrawText("1. Dragon Game: Won", 200, Yoffset, 20, GREEN);
+                        DrawText("1. Dragon Game: Won", 200, 300, 20, GREEN);
                     } else{
-                        DrawText("1. Dragon Game: Lost", 200, Yoffset, 20, RED);
+                        DrawText("1. Dragon Game: Lost", 200, 300, 20, RED);
                     }
-                    Yoffset+=30;
             
                     if (game2won){
-                        DrawText("2. Snitch Escape: Won", 200, Yoffset, 20, GREEN);
+                        DrawText("2. Snitch Escape: Won", 200, 330, 20, GREEN);
                     } else{
-                        DrawText("2. Snitch Escape: Lost", 200, Yoffset, 20, RED);
+                        DrawText("2. Snitch Escape: Lost", 200, 330, 20, RED);
                     }
-                    Yoffset+=30;
             
                     if (game3won){
-                        DrawText("3. Enchanted Maze: Won", 200, Yoffset, 20, GREEN);
+                        DrawText("3. Enchanted Maze: Won", 200, 360, 20, GREEN);
                     } else{
-                        DrawText("3. Enchanted Maze: Lost", 200, Yoffset, 20, RED);
+                        DrawText("3. Enchanted Maze: Lost", 200, 360, 20, RED);
                     }
             
                     if (game1won && game2won && game3won){
-                        DrawText("You have won the Triwizard Cup!", 160, Yoffset+60, 20, GREEN);
+                        DrawText("You have won the Triwizard Cup!", 160, 420, 20, GREEN);
                     } else{
-                        DrawText("Better luck next time!", 180, Yoffset+60, 20, GRAY);
+                        DrawText("Better luck next time!", 180, 420, 20, GRAY);
                     }
             
-                    DrawText("Press [ENTER] to play again or [ESC] to exit.", 180, Yoffset+120, 20, RAYWHITE);
+                    DrawText("Press [ENTER] to play again or [ESC] to exit.", 180, 540, 20, RAYWHITE);
             
                     if (IsKeyPressed(KEY_ENTER)) currentscreen= MENU;
                     if (IsKeyPressed(KEY_ESCAPE)) currentscreen= EXIT;
