@@ -76,7 +76,7 @@ The controls are consistent across all three mini-games, ensuring a smooth gamep
 Firstly install Raylib and then use this to compile:
 
 bash
-gcc -o game.exe main.c dragon_game.c snitch_escape.c enchanted_maze.c -lraylib -lGL -lm -lpthread -ldl -lrt
+gcc -o game.exe main.c dragons_egg.c snitch_escape.c enchanted_maze.c -lraylib -lGL -lm -lpthread -ldl -lrt
 ./game.exe
 
 
